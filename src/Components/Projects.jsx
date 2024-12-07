@@ -1,5 +1,5 @@
 import React from "react";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, a } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import Image2 from "../assets/img/project-img-1.jpg";
 import Image3 from "../assets/img/project-img-2.jpg";
@@ -16,6 +16,7 @@ function Projects() {
   const [ref4, inView4] = useInView({ threshold: 0.5 });
   const [ref5, inView5] = useInView({ threshold: 0.5 });
   const [ref6, inView6] = useInView({ threshold: 0.5 });
+  const [ref7, inView7] = useInView({ threshold: 0.5 });
 
   // Define animation properties using useSpring
   const animationProps1 = useSpring({
@@ -49,6 +50,12 @@ function Projects() {
   });
 
   const animationProps6 = useSpring({
+    opacity: inView6 ? 1 : 0,
+    transform: inView6 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
+  const animationProps7 = useSpring({
     opacity: inView6 ? 1 : 0,
     transform: inView6 ? "translateY(0)" : "translateY(50px)",
     config: { mass: 1, tension: 120, friction: 14 }
@@ -178,6 +185,22 @@ function Projects() {
               </a>
             </div>
           </animated.article>
+
+          <animated.article
+             ref={ref7}
+             style={animationProps7}
+             className="projects__card"
+          >
+            <img src={Image4} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">Full Stack Project</span>
+              <h2 className="projects__title">Github Repo</h2>
+              <a href="https://github.com/ayomideadeniran/FULL-BACKEND-PROJECT.git" className="projects__button" target="_blank" rel="noopener noreferrer">
+                gitHub repo of Profile-image upload and Fetch, Forgot-password, Registration, Login   <i className="ri-external-link-line" />
+              </a>
+            </div>
+          </animated.article>
+
         </div>
       </section>
     </div>
