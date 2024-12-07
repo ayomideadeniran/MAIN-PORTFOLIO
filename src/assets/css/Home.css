@@ -1,0 +1,44 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home__subtitle,
+.home__title,
+.home__education,
+.home__description,
+.button,
+.home__social-link {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.home__subtitle {
+  animation-delay: 0.2s;
+}
+
+.home__title {
+  animation-delay: 0.4s;
+}
+
+.home__education {
+  animation-delay: 0.6s;
+}
+
+.home__description {
+  animation-delay: 0.8s;
+}
+
+.button {
+  animation-delay: 1s;
+}
+
+.home__social-link {
+  animation-delay: 1.2s;
+}
