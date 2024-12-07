@@ -1,12 +1,13 @@
 import React from "react";
 import { useSpring, animated, a } from "react-spring";
 import { useInView } from "react-intersection-observer";
-import Image2 from "../assets/img/project-img-1.jpg";
+import Image2 from "../assets/img/saferoute.png";
 import Image3 from "../assets/img/project-img-2.jpg";
-import Image4 from "../assets/img/project-img-3.jpg";
-import Image5 from "../assets/img/project-img-4.jpg";
-import Image6 from "../assets/img/project-img-5.jpg";
-import Image7 from "../assets/img/project-img-6.jpg";
+import Image4 from "../assets/img/BOOKSTORE.png";
+import Image5 from "../assets/img/FileUpload.png";
+import Image6 from "../assets/img/slidesaferoute.png";
+import Image7 from "../assets/img/Text to Speech.png";
+import Image8 from "../assets/img/FULLBACKED.png";
 
 function Projects() {
   // Use useInView hook to track visibility
@@ -191,7 +192,7 @@ function Projects() {
              style={animationProps7}
              className="projects__card"
           >
-            <img src={Image4} alt="project image" className="projects__img" />
+            <img src={Image8} alt="project image" className="projects__img" />
             <div className="projects__modal">
               <span className="projects__subtitle">Full Stack Project</span>
               <h2 className="projects__title">Github Repo</h2>

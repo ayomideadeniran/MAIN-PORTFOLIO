@@ -23,7 +23,7 @@ function Header() {
 
         <nav className="nav container">
           <a href="#" className="nav__logo">
-            <span>Ayomide</span>
+            <span> <strong>Ayomide</strong> </span>
           </a>
 
           <div

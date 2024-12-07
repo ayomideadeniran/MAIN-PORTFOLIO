@@ -34,7 +34,7 @@ function Services() {
 
           <animated.article className="services__card">
             <i className="ri-pen-nib-line services__icon"></i>
-            <h2 className="services__title">Graphic Design</h2>
+            <h2 className="services__title">Graphic Designer</h2>
             <p className="services__description">
               I collaborate with clients to craft tailored visual solutions,
               including banner designs, posters, digital designs, and more.
