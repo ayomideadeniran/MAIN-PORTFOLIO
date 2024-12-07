@@ -26,6 +26,10 @@ function About() {
             <a href="#contact" className="button">
               Contact Me
             </a>
+<br />
+            <a target="_blank" href="https://drive.google.com/file/d/1UfpdYX_xGnnrUp3GMjdyL9z5o18j6Bj2/view?usp=sharing" className="button" style={{ marginTop: "10px" }}>
+              MY RESUME
+            </a>
           </div>
 
           <div className="about__image">
