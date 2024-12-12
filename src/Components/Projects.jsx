@@ -3,7 +3,7 @@ import { useSpring, animated, a } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import Image2 from "../assets/img/saferoute.png";
 import Image3 from "../assets/img/project-img-2.jpg";
-import Image4 from "../assets/img/BOOKSTORE.png";
+import Image4 from "../assets/img/image.png";
 import Image5 from "../assets/img/FileUpload.png";
 import Image6 from "../assets/img/slidesaferoute.png";
 import Image7 from "../assets/img/Text to Speech.png";
@@ -88,6 +88,7 @@ function Projects() {
               >
                MY AFRICAS TALKING PROJECT<i className="ri-external-link-line" />
               </a>
+              <a href="https://github.com/ayomideadeniran/AFRICAS-TALKING-API.git" className="projects__button"> <i className="ri-external-link-line" />GITHUB Link</a>
             </div>
           </animated.article>
 
@@ -101,12 +102,12 @@ function Projects() {
               <span className="projects__subtitle">Web</span>
               <h2 className="projects__title">Modern website</h2>
               <a
-                href="https://coded-8xso.onrender.com/"
+                href="https://learners-den-one.vercel.app/"
                 className="projects__button"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                view demo <i className="ri-external-link-line" />
+                Learners' Den project<i className="ri-external-link-line" />
               </a>
             </div>
           </animated.article>
@@ -121,12 +122,12 @@ function Projects() {
               <span className="projects__subtitle">Web</span>
               <h2 className="projects__title">Modern website</h2>
               <a
-                href="https://bookstores-qb5n.onrender.com/"
+                href="https://learners-den-one.vercel.app/"
                 className="projects__button"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                view demo <i className="ri-external-link-line" />
+                Learners' Den project<i className="ri-external-link-line" />
               </a>
             </div>
           </animated.article>
