@@ -8,6 +8,7 @@ import Image5 from "../assets/img/FileUpload.png";
 import Image6 from "../assets/img/slidesaferoute.png";
 import Image7 from "../assets/img/Text to Speech.png";
 import Image8 from "../assets/img/FULLBACKED.png";
+import Image9 from "../assets/img/tech.png";
 
 function Projects() {
   // Use useInView hook to track visibility
@@ -62,6 +63,7 @@ function Projects() {
     config: { mass: 1, tension: 120, friction: 14 }
   });
 
+
   return (
     <div>
       {/* <!--==================== PROJECTS ====================--> */}
@@ -97,18 +99,19 @@ function Projects() {
             style={animationProps2}
             className="projects__card"
           >
-            <img src={Image3} alt="project image" className="projects__img" />
+            <img src={Image9} alt="project image" className="projects__img" />
             <div className="projects__modal">
               <span className="projects__subtitle">Web</span>
-              <h2 className="projects__title">Modern website</h2>
+              <h2 className="projects__title">ATech Bootcamp</h2>
               <a
-                href="https://learners-den-one.vercel.app/"
+                href="https://a-tech-bootcamp.vercel.app/"
                 className="projects__button"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Learners' Den project<i className="ri-external-link-line" />
+                ATech Bootcamp project<i className="ri-external-link-line" />
               </a>
+              <a href="https://github.com/ayomideadeniran/ATech" className="projects__button"> <i className="ri-external-link-line" />GITHUB Link</a>
             </div>
           </animated.article>
 
