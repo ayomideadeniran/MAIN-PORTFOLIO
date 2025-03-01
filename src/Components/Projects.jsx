@@ -9,6 +9,7 @@ import Image6 from "../assets/img/slidesaferoute.png";
 import Image7 from "../assets/img/Text to Speech.png";
 import Image8 from "../assets/img/FULLBACKED.png";
 import Image9 from "../assets/img/tech.png";
+import Image10 from "../assets/img/7.png";
 
 function Projects() {
   // Use useInView hook to track visibility
@@ -19,6 +20,7 @@ function Projects() {
   const [ref5, inView5] = useInView({ threshold: 0.5 });
   const [ref6, inView6] = useInView({ threshold: 0.5 });
   const [ref7, inView7] = useInView({ threshold: 0.5 });
+  const [ref8, inView8] = useInView({ threshold: 0.5 });
 
   // Define animation properties using useSpring
   const animationProps1 = useSpring({
@@ -58,11 +60,16 @@ function Projects() {
   });
 
   const animationProps7 = useSpring({
-    opacity: inView6 ? 1 : 0,
-    transform: inView6 ? "translateY(0)" : "translateY(50px)",
+    opacity: inView7 ? 1 : 0,
+    transform: inView7 ? "translateY(0)" : "translateY(50px)",
     config: { mass: 1, tension: 120, friction: 14 }
   });
 
+  const animationProps8 = useSpring({
+    opacity: inView8 ? 1 : 0,
+    transform: inView8 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
 
   return (
     <div>
@@ -200,9 +207,34 @@ function Projects() {
             <div className="projects__modal">
               <span className="projects__subtitle">Full Stack Project</span>
               <h2 className="projects__title">Github Repo</h2>
-              <a href="https://github.com/ayomideadeniran/FULL-BACKEND-PROJECT.git" className="projects__button" target="_blank" rel="noopener noreferrer">
+              <a style={{ textDecoration: "none", textAlign: "center" }} href="https://github.com/ayomideadeniran/FULL-BACKEND-PROJECT.git" className="projects__button" target="_blank" rel="noopener noreferrer">
                 gitHub repo of Profile-image upload and Fetch, Forgot-password, Registration, Login   <i className="ri-external-link-line" />
               </a>
+            </div>
+          </animated.article>
+
+
+          <animated.article
+            ref={ref8}
+            style={animationProps8}
+            className="projects__card"
+          >
+            <img src={Image10} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">Hackerthon Project</span>
+              <h2 className="projects__title">Ecomerce Website</h2>
+              <a
+                href="https://ecommerce-app-drab-three.vercel.app/"
+                className="projects__button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+               MY AFRICAS TALKING PROJECT<i className="ri-external-link-line" />
+              </a>
+              <a href="https://github.com/ayomideadeniran/Ecommerce-APP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projects__button"> <i className="ri-external-link-line" />GITHUB Link</a>
             </div>
           </animated.article>
 

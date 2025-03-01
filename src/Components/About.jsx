@@ -16,7 +16,7 @@ function About() {
             <h2 className="section__title">About Me</h2>
 
             <p className="about__description" id="app">
-              As a seasoned MERN developer with 3 years of experience, I
+              As a seasoned MERN developer and Open Source contributor with 3 years of experience, I
               specialize in crafting web pages with visually appealing and
               user-friendly interfaces. My expertise has yielded numerous
               successful projects, resulting in consistently positive feedback

@@ -26,17 +26,20 @@ function Skill() {
   // Array of skills
   const skills = [
     "C programming",
-    "HTML",
-    "Javascript",
-    "Canva",
+    "RUST",
     "Bootstrap",
     "Reactjs",
+    "Solidity",
     "Git & Github",
     "Photoshop",
     "Nodejs",
     "Expressjs",
     "MongoDB",
     "Python",
+    "Cairo",
+    "HTML",
+    "Javascript",
+    "Canva",
   ];
 
   return (
