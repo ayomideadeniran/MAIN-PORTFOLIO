@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 function Services() {
   // useInView hook to track visibility of the services section
-  const [ref, inView] = useInView({ threshold: 0.5 });
+  const [ref, inView] = useInView({ threshold: 0.2 });
 
   // Define animations for each service card using useSpring
   const cardAnimationProps = useSpring({

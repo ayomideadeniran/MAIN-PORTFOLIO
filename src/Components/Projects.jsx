@@ -10,6 +10,7 @@ import Image7 from "../assets/img/Text to Speech.png";
 import Image8 from "../assets/img/FULLBACKED.png";
 import Image9 from "../assets/img/tech.png";
 import Image10 from "../assets/img/7.png";
+import Image11 from "../assets/img/FASTDELIV.png";
 
 function Projects() {
   // Use useInView hook to track visibility
@@ -21,6 +22,7 @@ function Projects() {
   const [ref6, inView6] = useInView({ threshold: 0.5 });
   const [ref7, inView7] = useInView({ threshold: 0.5 });
   const [ref8, inView8] = useInView({ threshold: 0.5 });
+  const [ref9, inView9] = useInView({ threshold: 0.5 });
 
   // Define animation properties using useSpring
   const animationProps1 = useSpring({
@@ -68,6 +70,12 @@ function Projects() {
   const animationProps8 = useSpring({
     opacity: inView8 ? 1 : 0,
     transform: inView8 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
+  const animationProps9 = useSpring({
+    opacity: inView9 ? 1 : 0,
+    transform: inView9 ? "translateY(0)" : "translateY(50px)",
     config: { mass: 1, tension: 120, friction: 14 }
   });
 
@@ -237,6 +245,34 @@ function Projects() {
               className="projects__button"> <i className="ri-external-link-line" />GITHUB Link</a>
             </div>
           </animated.article>
+
+
+
+          <animated.article
+            ref={ref9}
+            style={animationProps9}
+            className="projects__card"
+          >
+            <img src={Image11} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">ZION HACKTHON PITCH</span>
+              <h2 className="projects__title">FASTDELIV Website Ideal</h2>
+              <a
+                href="https://www.canva.com/design/DAGhCdVKiWA/bGSqfsCaKD6rv9WGaxYDEg/view?utm_content=DAGhCdVKiWA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2a586edce6"
+                className="projects__button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+               MY ZION HACKTHON PITCH IDEAL<i className="ri-external-link-line" />
+              </a>
+              <a href="https://drive.google.com/drive/folders/1-u00G6FENr-kFAm-tvo--AvE0_W5EImA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="projects__button"> <i className="ri-external-link-line" />GITHUB Link</a>
+            </div>
+          </animated.article>
+
+          
 
         </div>
       </section>

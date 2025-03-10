@@ -39,9 +39,9 @@ function Home() {
                 {/* Content will be typed here */}
               </h1>
 
-              <h3 className="home__education">MERN Developer</h3>
+              <h3 className="home__education">Software Engineer</h3>
               <p className="home__description">
-                With knowledge in web development, I offer the best projects
+                With knowledge in Web2 and Web3 development, I offer the best projects
                 resulting in quality work.
               </p>
               <a href="#contact" className="button">
