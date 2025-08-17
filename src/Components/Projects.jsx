@@ -11,6 +11,11 @@ import Image8 from "../assets/img/FULLBACKED.png";
 import Image9 from "../assets/img/tech.png";
 import Image10 from "../assets/img/7.png";
 import Image11 from "../assets/img/FASTDELIV.png";
+import predictImage from "../assets/img/predict.png";
+import walletValidatorImage from "../assets/img/Ethereum Wallet Validator.png";
+import quizImage from "../assets/img/quiz.png";
+import bitcoinImage from "../assets/img/Bitcoin.png";
+import fileOrganiserImage from "../assets/img/fileorganiser.png";
 
 function Projects() {
   // Use useInView hook to track visibility
@@ -23,6 +28,11 @@ function Projects() {
   const [ref7, inView7] = useInView({ threshold: 0.5 });
   const [ref8, inView8] = useInView({ threshold: 0.5 });
   const [ref9, inView9] = useInView({ threshold: 0.5 });
+  const [ref10, inView10] = useInView({ threshold: 0.5 });
+  const [ref11, inView11] = useInView({ threshold: 0.5 });
+  const [ref12, inView12] = useInView({ threshold: 0.5 });
+  const [ref13, inView13] = useInView({ threshold: 0.5 });
+  const [ref14, inView14] = useInView({ threshold: 0.5 });
 
   // Define animation properties using useSpring
   const animationProps1 = useSpring({
@@ -76,6 +86,36 @@ function Projects() {
   const animationProps9 = useSpring({
     opacity: inView9 ? 1 : 0,
     transform: inView9 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
+  const animationProps10 = useSpring({
+    opacity: inView10 ? 1 : 0,
+    transform: inView10 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
+  const animationProps11 = useSpring({
+    opacity: inView11 ? 1 : 0,
+    transform: inView11 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
+  const animationProps12 = useSpring({
+    opacity: inView12 ? 1 : 0,
+    transform: inView12 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
+  const animationProps13 = useSpring({
+    opacity: inView13 ? 1 : 0,
+    transform: inView13 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
+  const animationProps14 = useSpring({
+    opacity: inView14 ? 1 : 0,
+    transform: inView14 ? "translateY(0)" : "translateY(50px)",
     config: { mass: 1, tension: 120, friction: 14 }
   });
 
@@ -272,7 +312,104 @@ function Projects() {
             </div>
           </animated.article>
 
+          <animated.article
+            ref={ref10}
+            style={animationProps10}
+            className="projects__card"
+          >
+            <img src={predictImage} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">Web3/Blockchain</span>
+              <h2 className="projects__title">Predict Tomorrow's Economy</h2>
+              <a
+                href="https://predict-tomorrow-s-economy.vercel.app/"
+                className="projects__button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+               Live App<i className="ri-external-link-line" />
+              </a>
+              <a href="https://github.com/ayomideadeniran/Predict-Tomorrow-s-Economy" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Frontend Repo</a>
+              <a href="https://github.com/ayomideadeniran/Predict-Tomorrow-s-Economy-Contract" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Smart Contract Repo</a>
+            </div>
+          </animated.article>
+
+          <animated.article
+            ref={ref11}
+            style={animationProps11}
+            className="projects__card"
+          >
+            <img src={walletValidatorImage} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">Web3/Blockchain</span>
+              <h2 className="projects__title">Ethereum Wallet Validator</h2>
+              <a
+                href="https://ethereum-wallet-validator.vercel.app/"
+                className="projects__button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+               Live App<i className="ri-external-link-line" />
+              </a>
+              <a href="https://github.com/ayomideadeniran/Ethereum-Wallet-Validator" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
+            </div>
+          </animated.article>
+
+          <animated.article
+            ref={ref12}
+            style={animationProps12}
+            className="projects__card"
+          >
+            <img src={quizImage} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">Web App</span>
+              <h2 className="projects__title">Quiz App</h2>
+              <a
+                href="https://quiz-app-nine-tan.vercel.app/"
+                className="projects__button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+               Live App<i className="ri-external-link-line" />
+              </a>
+              <a href="https://github.com/ayomideadeniran/Quiz-App" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
+            </div>
+          </animated.article>
           
+          <animated.article
+            ref={ref13}
+            style={animationProps13}
+            className="projects__card"
+          >
+            <img src={bitcoinImage} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">Web3/Blockchain</span>
+              <h2 className="projects__title">BITCOIN OFFLINE</h2>
+              <a
+                href="https://www.canva.com/design/DAGnrxyzEUQ/asYued1m0NioXpOFca5unw/view?utm_content=DAGnrxyzEUQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hee236b2a2f"
+                className="projects__button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              Canva Live Link<i className="ri-external-link-line" />
+              </a>
+              <a href="https://github.com/ayomideadeniran/BITCOIN-OFFLINE-" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
+            </div>
+          </animated.article>
+
+          <animated.article
+            ref={ref14}
+            style={animationProps14}
+            className="projects__card"
+          >
+            <img src={fileOrganiserImage} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">Rust</span>
+              <h2 className="projects__title">File Organizer with Rust</h2>
+              <a href="https://github.com/ayomideadeniran/File-Organizer-with-Rust" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
+            </div>
+          </animated.article>
+
 
         </div>
       </section>
