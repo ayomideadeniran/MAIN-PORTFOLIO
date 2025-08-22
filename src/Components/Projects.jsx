@@ -16,6 +16,7 @@ import walletValidatorImage from "../assets/img/Ethereum Wallet Validator.png";
 import quizImage from "../assets/img/quiz.png";
 import bitcoinImage from "../assets/img/Bitcoin.png";
 import fileOrganiserImage from "../assets/img/fileorganiser.png";
+import cairoImage from "../assets/img/BOOKSTORE.png";
 
 function Projects() {
   // Use useInView hook to track visibility
@@ -33,6 +34,7 @@ function Projects() {
   const [ref12, inView12] = useInView({ threshold: 0.5 });
   const [ref13, inView13] = useInView({ threshold: 0.5 });
   const [ref14, inView14] = useInView({ threshold: 0.5 });
+  const [ref15, inView15] = useInView({ threshold: 0.5 });
 
   // Define animation properties using useSpring
   const animationProps1 = useSpring({
@@ -119,6 +121,12 @@ function Projects() {
     config: { mass: 1, tension: 120, friction: 14 }
   });
 
+  const animationProps15 = useSpring({
+    opacity: inView15 ? 1 : 0,
+    transform: inView15 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
   return (
     <div>
       {/* <!--==================== PROJECTS ====================--> */}
@@ -156,7 +164,7 @@ function Projects() {
           >
             <img src={Image9} alt="project image" className="projects__img" />
             <div className="projects__modal">
-              <span className="projects__subtitle">Web</span>
+              <span className="projects__subtitle">Web3/Blockchain</span>
               <h2 className="projects__title">ATech Bootcamp</h2>
               <a
                 href="https://a-tech-bootcamp.vercel.app/"
@@ -407,6 +415,20 @@ function Projects() {
               <span className="projects__subtitle">Rust</span>
               <h2 className="projects__title">File Organizer with Rust</h2>
               <a href="https://github.com/ayomideadeniran/File-Organizer-with-Rust" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
+            </div>
+          </animated.article>
+
+          <animated.article
+            ref={ref15}
+            style={animationProps15}
+            className="projects__card"
+          >
+            <img src={cairoImage} alt="project image" className="projects__img" />
+            <div className="projects__modal">
+              <span className="projects__subtitle">Web3/Blockchain</span>
+              <h2 className="projects__title">Cairo Project</h2>
+              <a href="#" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Live App</a>
+              <a href="#" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
             </div>
           </animated.article>
 

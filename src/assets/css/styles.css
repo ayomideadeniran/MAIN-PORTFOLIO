@@ -382,31 +382,29 @@ svg {
   margin-bottom: 2rem;
 }
 
-.skills__content,
-.skills__group {
+.skills__grid {
   display: grid;
-}
-
-.skills__content {
-  grid-template-columns: repeat(2, max-content);
-  column-gap: 4rem;
-  justify-content: center;
-  align-items: baseline;
-}
-
-.skills__group {
-  row-gap: 1rem;
-  list-style: decimal-leading-zero;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
 }
 
 .skills__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--body-color);
+  border-radius: 0.5rem;
   font-weight: var(--font-medium);
   color: var(--title-color);
+  transition: transform 0.3s;
 }
 
-.skills__item::marker {
-  color: var(--first-color);
+.skills__item:hover {
+  transform: translateY(-5px);
 }
+
+
 
 /*=============== SERVICES ===============*/
 
@@ -808,6 +806,10 @@ svg {
   }
   .skills__item {
     font-size: var(--h3-font-size);
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(4, 1fr);
   }
   .services__container {
     grid-template-columns: repeat(3, 352px);

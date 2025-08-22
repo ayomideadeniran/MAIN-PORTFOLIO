@@ -10,24 +10,36 @@ function About() {
           <div className="about__data">
             <h3 className="section__subtitle">
               My <span>Intro</span>
-              
             </h3>
 
             <h2 className="section__title">About Me</h2>
-
+            
             <p className="about__description" id="app">
-              As a seasoned MERN developer and Open Source contributor with 3 years of experience, I
-              specialize in crafting web pages with visually appealing and
-              user-friendly interfaces. My expertise has yielded numerous
-              successful projects, resulting in consistently positive feedback
-              from satisfied clients.
+              I’m a passionate developer with 3 years of experience building
+              full-stack applications and exploring emerging technologies. My
+              work spans across Web3, Bitcoin, Rust, and modern JavaScript
+              frameworks like React, Next.js, and Node.js, where I focus on
+              creating polished, production-ready solutions. Over the years,
+              I’ve built diverse projects including learning management systems,
+              Bitcoin offline transaction simulators, and AI-powered platforms
+              for education, while also experimenting with graphic design to
+              bring creativity into my builds. I enjoy hackathons, pushing
+              myself to learn advanced coding concepts, and finding fun, unique
+              ways to share my journey—whether through writing, collaboration,
+              or even rap. My mission is simple: keep learning, keep building,
+              and use technology to solve real problems.
             </p>
 
             <a href="#contact" className="button">
               Contact Me
             </a>
-<br />
-            <a target="_blank" href="https://drive.google.com/file/d/1UfpdYX_xGnnrUp3GMjdyL9z5o18j6Bj2/view?usp=sharing" className="button" style={{ marginTop: "10px" }}>
+            <br />
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/1UfpdYX_xGnnrUp3GMjdyL9z5o18j6Bj2/view?usp=sharing"
+              className="button"
+              style={{ marginTop: "10px" }}
+            >
               MY RESUME
             </a>
           </div>

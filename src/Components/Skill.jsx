@@ -4,28 +4,11 @@ import { useInView } from "react-intersection-observer";
 
 function Skill() {
   // useInView hook to track visibility of the skill section
-  const [ref, inView] = useInView({ threshold: 0.5 });
-
-  // Define animations for each skill item using useTrail
-  const skillAnimationProps = useTrail(9, {
-    from: { opacity: 0, transform: "translateX(-20px)" },
-    to: {
-      opacity: inView ? 1 : 0,
-      transform: inView ? "translateX(0)" : "translateX(-20px)",
-    },
-    config: { mass: 3, tension: 200, friction: 20 }, // Adjusted for slower animation
-  });
-
-  // Animation props for the whole section using useSpring
-  const sectionAnimationProps = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? "translateY(0)" : "translateY(50px)",
-    config: { mass: 1, tension: 120, friction: 20 }, // Adjusted for slower animation
-  });
+  const [ref, inView] = useInView({ threshold: 0.2 });
 
   // Array of skills
   const skills = [
-    "C programming",
+    "C",
     "RUST",
     "Bootstrap",
     "Reactjs",
@@ -40,7 +23,53 @@ function Skill() {
     "HTML",
     "Javascript",
     "Canva",
+    "Tailwind CSS",
+    "CSS",
+    "Nextjs",
+    "TypeScript",
+    "Web3.js",
   ];
+
+  const colors = [
+    "#FF5733",
+    "#33FF57",
+    "#3357FF",
+    "#FF33A1",
+    "#A133FF",
+    "#33FFA1",
+    "#FF7F50",
+    "#6A5ACD",
+    "#2E8B57",
+    "#DC143C",
+    "#00CED1",
+    "#FFD700",
+    "#FF4500",
+    "#9ACD32",
+    "#4682B4",
+    "#D2691E",
+    "#8A2BE2",
+    "#008080",
+    "#ADFF2F",
+    "#DB7093",
+  ];
+
+  // Define animations for each skill item using useTrail
+  const trail = useTrail(skills.length, {
+    from: { opacity: 0, transform: "translateX(-20px)" },
+    to: {
+      opacity: inView ? 1 : 0,
+      transform: inView ? "translateX(0)" : "translateX(-20px)",
+    },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 200,
+  });
+
+  // Animation props for the whole section using useSpring
+  const sectionAnimationProps = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 20 },
+  });
 
   return (
     <div>
@@ -65,36 +94,32 @@ function Skill() {
             <a href="#projects" className="button">
               See Projects
             </a>
-<br />
-            <a target="_blank" href="https://drive.google.com/file/d/1UfpdYX_xGnnrUp3GMjdyL9z5o18j6Bj2/view?usp=sharing" className="button" style={{ marginTop: "10px" }}>
+            <br />
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/1UfpdYX_xGnnrUp3GMjdyL9z5o18j6Bj2/view?usp=sharing"
+              className="button"
+              style={{ marginTop: "10px" }}
+            >
               MY RESUME
             </a>
-
           </div>
 
           <div className="skills__content">
-            <ol className="skills__group">
-              {skills.slice(0, 5).map((skill, index) => (
-                <animated.li
+            <div className="skills__grid">
+              {trail.map((props, index) => (
+                <animated.div
                   key={index}
-                  style={skillAnimationProps[index]}
+                  style={{
+                    ...props,
+                    backgroundColor: colors[index % colors.length],
+                  }}
                   className="skills__item"
                 >
-                  {skill}
-                </animated.li>
+                  {skills[index]}
+                </animated.div>
               ))}
-            </ol>
-            <ol className="skills__group" start="5">
-              {skills.slice(5).map((skill, index) => (
-                <animated.li
-                  key={index + 5}
-                  style={skillAnimationProps[index + 5]}
-                  className="skills__item"
-                >
-                  {skill}
-                </animated.li>
-              ))}
-            </ol>
+            </div>
           </div>
         </animated.div>
       </section>
