@@ -160,7 +160,7 @@ svg {
 .header {
   position: fixed;
   width: 100%;
-  background-color: var(--container-color);
+  background-color: #000; /* header background set to black */
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
@@ -170,6 +170,21 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* When menu is open, make header slightly darker and the mobile menu more visible */
+.header.menu-open {
+  background-color: rgba(7, 10, 13, 0.92);
+}
+
+.header.menu-open .nav__menu {
+  /* background-color: hsla(var(--hue), 80%, 12%, 0.98); */
+  right: 0; /* ensure visible on mobile when class is applied */
+}
+
+.header.menu-open .nav__toggle,
+.header.menu-open .nav__close {
+  color: var(--first-color);
 }
 
 .nav__logo {
@@ -189,16 +204,36 @@ svg {
   cursor: pointer;
 }
 
+/* Nav link: bigger, padded and visibly clickable */
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  font-size: 1.125rem; /* bigger text */
+  padding: 0.6rem 1rem; /* larger click area */
+  border-radius: 0.5rem;
+  display: inline-block;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  background-color: rgba(255,255,255,0.04);
+  color: var(--first-color);
+  transform: translateY(-2px);
+}
+
 /* Navigation for mobile devices */
 @media screen and (max-width: 1023px) {
   .nav__menu {
     position: fixed;
     top: 0;
     right: -100%;
-    background-color: hsla(0, 0%, 10%, 0.3);
+    /* solid black background for mobile menu */
+    background-color: rgba(0,0,0,0.98);
     width: 75%;
     height: 100%;
-    padding: 4.5rem 0 0 3rem;
+    /* remove large left padding so items can be centered */
+    padding: 6rem 0 0 0;
     backdrop-filter: blur(24px);
     -webkit-bacdrop-filter: blur(24px);
     transition: right 0.4s;
@@ -208,6 +243,36 @@ svg {
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
+}
+
+/* Mobile-specific: center sidebar items and make links full-width */
+@media screen and (max-width: 1023px) {
+  .nav__list {
+    align-items: center; /* center horizontally */
+    row-gap: 3.5rem;
+    width: 100%;
+    padding-inline: 0;
+  }
+
+  .nav__list .nav__item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav__link {
+    width: 100%;
+    text-align: center; /* center text */
+    font-size: 1.25rem; /* bigger for sidebar */
+    padding: 1rem 1.5rem; /* taller click area */
+    display: block;
+    color: var(--title-color);
+  }
+
+  /* Give the sidebar itself a subtle inner background for links when open */
+  .nav__menu {
+    background: linear-gradient(180deg, rgba(0,0,0,0.98) 0%, rgba(10,10,10,0.98) 100%);
+  }
 }
 
 .mav__link {

@@ -1,22 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleToggleClick = () => {
-    setMenuOpen(true);
+    setMenuOpen(prev => !prev);
   };
 
   const handleCloseClick = () => {
     setMenuOpen(false);
   };
 
+  // refs to detect outside clicks
+  const navMenuRef = useRef(null);
+  const toggleRef = useRef(null);
+
+  useEffect(() => {
+    function onDocumentDown(e) {
+      if (!menuOpen) return;
+      const menu = navMenuRef.current;
+      const toggle = toggleRef.current;
+      if (menu && !menu.contains(e.target) && toggle && !toggle.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    }
+
+    function onEsc(e) {
+      if (e.key === "Escape") setMenuOpen(false);
+    }
+
+    document.addEventListener("mousedown", onDocumentDown);
+    document.addEventListener("touchstart", onDocumentDown);
+    document.addEventListener("keydown", onEsc);
+
+    return () => {
+      document.removeEventListener("mousedown", onDocumentDown);
+      document.removeEventListener("touchstart", onDocumentDown);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, [menuOpen]);
+
 
 
   return (
     <>
       {/* <!--==================== HEADER ====================--> */}
-      <header className="header" id="header">
+  <header className={`header ${menuOpen ? 'menu-open' : ''}`} id="header">
         {/* <!-- <div>
           <h1>I'M <span className="auto-type"></span></h1>
         </div> --> */}
@@ -29,6 +58,8 @@ function Header() {
           <div
             className={`nav__menu ${menuOpen ? "show-menu" : ""}`}
             id="nav-menu"
+            ref={navMenuRef}
+            aria-hidden={!menuOpen}
           >
             <ul className="nav__list">
               <li className="nav__item">
@@ -76,6 +107,10 @@ function Header() {
             className="nav__toggle"
             id="nav-toggle"
             onClick={handleToggleClick}
+            ref={toggleRef}
+            role="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
           >
             <i className="ri-menu-line"></i>
           </div>
