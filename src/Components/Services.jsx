@@ -15,7 +15,7 @@ function Services() {
 
   return (
     <div>
-      {/* <!--==================== SERVICES ====================--> */}
+      {/* */}
       <section className="services section" id="services" ref={ref}>
         <animated.div
           style={cardAnimationProps}
@@ -23,45 +23,33 @@ function Services() {
         >
           <animated.article className="services__card">
             <i className="ri-layout-3-line services__icon" />
-            <h2 className="services__title">Full Stack Web Development</h2>
+            <h2 className="services__title">Project Ready: Web3 & Financial Systems</h2>
             <p className="services__description">
-              Full-Stack Web Developer | Building custom web pages with
-              cutting-edge tech & libraries, delivering robust, scalable &
-              maintainable solutions. Expertise spans entire web dev spectrum,
-              ensuring seamless user experiences.
+              **Fully prepared to build the next groundbreaking project.** Focused on delivering robust, secure, and scalable solutions for **hackathons, financial platforms (Web3/Crypto), and complex real-world challenges**. Expertise in taking concepts from ideation to deployment.
             </p>
           </animated.article>
 
           <animated.article className="services__card">
             <i className="ri-pen-nib-line services__icon" />
-            <h2 className="services__title">Graphic Designer</h2>
+            <h2 className="services__title">Full Stack Web Development</h2>
             <p className="services__description">
-              I collaborate with clients to craft tailored visual solutions,
-              including banner designs, posters, digital designs, and more.
-              Proficient in Adobe Photoshop, Illustrator, and Figma, I bring
-              creativity to every project.
+              Full-Stack Developer | Building custom web pages with **cutting-edge tech & libraries** like NextJS and NestJS, delivering robust, scalable & maintainable solutions. Expertise spans the entire web development spectrum, ensuring seamless user experiences.
             </p>
           </animated.article>
 
           <animated.article className="services__card">
             <i className="ri-pantone-line services__icon" />
-            <h2 className="services__title">MERN Developer</h2>
+            <h2 className="services__title">MERN & Modern Tech Stack</h2>
             <p className="services__description">
-              MERN Developer | Building robust web apps with JavaScript
-              expertise, designing & developing scalable, efficient & modern
-              solutions. Proficient in MongoDB, Express, React & Node.js,
-              ensuring seamless integration & optimal performance.
+              MERN Developer | Proficient in MongoDB, Express, **React**, & **Node.js**, designing & developing scalable, efficient & modern applications. Focused on leveraging JavaScript/TypeScript to ensure seamless integration and optimal performance across all layers.
             </p>
           </animated.article>
 
           <animated.article className="services__card">
             <i className="ri-code-box-line services__icon" />
-            <h2 className="services__title">Open-Source Contributions</h2>
+            <h2 className="services__title">AI & Open-Source Contributions</h2>
             <p className="services__description">
-              Dedicated to contributing to the global open-source community by
-              developing, maintaining, and improving projects that benefit
-              developers worldwide. Believer in transparency, collaboration, and
-              empowering others through shared knowledge.
+              Dedicated to contributing to the global open-source community by developing, maintaining, and improving projects. Committed to leveraging **AI tools** (Python/Rust) to enhance application features, solve problems, and empower others through shared knowledge.
             </p>
           </animated.article>
         </animated.div>

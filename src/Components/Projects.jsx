@@ -37,6 +37,8 @@ function Projects() {
   const [ref14, inView14] = useInView({ threshold: 0.5 });
   const [ref15, inView15] = useInView({ threshold: 0.5 });
   const [ref16, inView16] = useInView({ threshold: 0.5 });
+  const [ref17, inView17] = useInView({ threshold: 0.5 });
+  const [ref18, inView18] = useInView({ threshold: 0.5 });
 
   // Define animation properties using useSpring
   const animationProps1 = useSpring({
@@ -135,6 +137,18 @@ function Projects() {
     config: { mass: 1, tension: 120, friction: 14 }
   });
 
+  const animationProps17 = useSpring({
+    opacity: inView17 ? 1 : 0,
+    transform: inView17 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
+  const animationProps18 = useSpring({
+    opacity: inView18 ? 1 : 0,
+    transform: inView18 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
   return (
     <div>
       {/* <!--==================== PROJECTS ====================--> */}
@@ -144,6 +158,27 @@ function Projects() {
         </h3>
         <h2 className="section__title">Recent Projects</h2>
         <div className="projects__container container grid">
+
+            {/* New project added at top: BitStarkNet (Resolve Hackathon) */}
+            <animated.article
+              ref={ref18}
+              style={animationProps18}
+              className="projects__card"
+            >
+              <img src="https://github.com/ayomideadeniran/BitStakeNet---Resolve-Hackathon/raw/main/assets/banner.png" alt="BitStarkNet banner" className="projects__img" />
+              <div className="projects__modal">
+                <span className="projects__subtitle">StarkNet / Web3</span>
+                <h2 className="projects__title">BitStarkNet — Resolve Hackathon</h2>
+                <a
+                  href="https://github.com/ayomideadeniran/BitStakeNet---Resolve-Hackathon.git"
+                  className="projects__button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repo <i className="ri-external-link-line" />
+                </a>
+              </div>
+            </animated.article>
 
             {/* Moved projects to top in requested order */}
             <animated.article
@@ -443,6 +478,27 @@ function Projects() {
                  Live App<i className="ri-external-link-line" />
                 </a>
                 <a href="https://github.com/ayomideadeniran/Quiz-App" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
+              </div>
+            </animated.article>
+
+            {/* Micropay: micropayment platform on StarkNet */}
+            <animated.article
+              ref={ref17}
+              style={animationProps17}
+              className="projects__card"
+            >
+              <img src={Image3} alt="Micropay project" className="projects__img" />
+              <div className="projects__modal">
+                <span className="projects__subtitle">StarkNet / Web3</span>
+                <h2 className="projects__title">Micropay Micropayments</h2>
+                <a
+                  href="https://github.com/ayomideadeniran/micropay"
+                  className="projects__button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repo <i className="ri-external-link-line" />
+                </a>
               </div>
             </animated.article>
 

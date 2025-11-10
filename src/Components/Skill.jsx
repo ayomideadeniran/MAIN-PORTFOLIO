@@ -6,52 +6,54 @@ function Skill() {
   // useInView hook to track visibility of the skill section
   const [ref, inView] = useInView({ threshold: 0.2 });
 
-  // Array of skills
-  const skills = [
-    "C",
-    "RUST",
-    "Bootstrap",
-    "Reactjs",
-    "Solidity",
-    "Git & Github",
-    "Photoshop",
-    "Nodejs",
-    "Expressjs",
-    "MongoDB",
-    "Python",
-    "Cairo",
-    "HTML",
-    "Javascript",
-    "Canva",
-    "Tailwind CSS",
-    "CSS",
-    "Nextjs",
-    "TypeScript",
-    "Web3.js",
-  ];
+  // Array of skills - REARRANGED FOR WEB3 FULL STACK PRIORITY
+const skills = [
+  "RUST",
+  "Python",
+  "Nodejs",
+  "TypeScript",
+  "Reactjs",
+  "Nextjs",
+  "Expressjs",
+  "MongoDB",
+  "C",
+  "Cairo",
+  "Solidity",
+  "Web3.js",
+  "Javascript",
+  "Tailwind CSS",
+  "HTML",
+  "CSS",
+  "Bootstrap",
+  "Git & Github",
+  "Photoshop",
+  "Canva",
+];
 
-  const colors = [
-    "#FF5733",
-    "#33FF57",
-    "#3357FF",
-    "#FF33A1",
-    "#A133FF",
-    "#33FFA1",
-    "#FF7F50",
-    "#6A5ACD",
-    "#2E8B57",
-    "#DC143C",
-    "#00CED1",
-    "#FFD700",
-    "#FF4500",
-    "#9ACD32",
-    "#4682B4",
-    "#D2691E",
-    "#8A2BE2",
-    "#008080",
-    "#ADFF2F",
-    "#DB7093",
-  ];
+
+const colors = [
+  "#FF6B6B", // RUST – strong red/orange
+  "#4ECDC4", // Python – teal / standout
+  "#FFD93D", // Nodejs – yellow / bright
+  "#1E90FF", // TypeScript – blue / techy
+  "#FF7F50", // Reactjs – coral / vibrant
+  "#8A2BE2", // Nextjs – purple
+  "#20B2AA", // Expressjs – light teal
+  "#FF69B4", // MongoDB – pinkish / standout
+  "#FF6347", // C – tomato
+  "#00CED1", // Cairo – cyan
+  "#ADFF2F", // Solidity – lime green
+  "#FF4500", // Web3.js – orange red
+  "#4682B4", // Javascript – steel blue
+  "#DA70D6", // Tailwind CSS – orchid
+  "#F0E68C", // HTML – khaki
+  "#87CEFA", // CSS – light sky blue
+  "#FFA500", // Bootstrap – orange
+  "#6A5ACD", // Git & Github – slate blue
+  "#FFB6C1", // Photoshop – light pink
+  "#20B2AA", // Canva – teal (repeat or slightly different shade)
+];
+
 
   // Define animations for each skill item using useTrail
   const trail = useTrail(skills.length, {
@@ -73,7 +75,7 @@ function Skill() {
 
   return (
     <div>
-      {/* <!--==================== SKILLS ====================--> */}
+      {/* */}
       <section className="skills section" id="skills" ref={ref}>
         <animated.div
           style={sectionAnimationProps}
@@ -97,7 +99,7 @@ function Skill() {
             <br />
             <a
               target="_blank"
-              href="https://drive.google.com/file/d/1UfpdYX_xGnnrUp3GMjdyL9z5o18j6Bj2/view?usp=sharing"
+              href="https://www.canva.com/design/DAG3i1_cors/YpNWi9GLkGnEEtQpYYBxlg/view?utm_content=DAG3i1_cors&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc010ea2019"
               className="button"
               style={{ marginTop: "10px" }}
             >

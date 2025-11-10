@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import autotyper from 'autotyper';
+import React, { useEffect, useRef } from "react";
+import autotyper from "autotyper";
 
 import Image from "../assets/img/PRO-PROFILE 001.png";
 
@@ -10,7 +10,7 @@ function Home() {
     const example = Object.create(autotyper);
     const element = typewriterRef.current;
     const options = {
-      text: 'Adeniran Ayomide', // Initial text to type
+      text: "Adeniran Ayomide", // Initial text to type
       loop: true, // Enable looping
       interval: [100, 200], // Interval between each keystroke (min, max) in milliseconds
       loopInterval: 1000, // Interval between each loop in milliseconds
@@ -41,8 +41,10 @@ function Home() {
 
               <h3 className="home__education">Software Engineer</h3>
               <p className="home__description">
-                With knowledge in Web2 and Web3 development, I offer the best projects
-                resulting in quality work.
+                AI specialist and open-source developer focused on building
+                reliable systems with Rust, C, Python, and JavaScript. I work
+                remotely, contribute to open-source, bounties, Hackerthons and mentor
+                students on solving real-world problems using AI.
               </p>
               <a href="#contact" className="button">
                 {" "}
