@@ -11,6 +11,7 @@ import Image8 from "../assets/img/FULLBACKED.png";
 import Image9 from "../assets/img/tech.png";
 import Image10 from "../assets/img/7.png";
 import Image11 from "../assets/img/FASTDELIV.png";
+import aiTechImage from "../assets/img/AI-tech.png";
 import predictImage from "../assets/img/predict.png";
 import walletValidatorImage from "../assets/img/Ethereum Wallet Validator.png";
 import quizImage from "../assets/img/quiz.png";
@@ -39,6 +40,7 @@ function Projects() {
   const [ref16, inView16] = useInView({ threshold: 0.5 });
   const [ref17, inView17] = useInView({ threshold: 0.5 });
   const [ref18, inView18] = useInView({ threshold: 0.5 });
+  const [ref19, inView19] = useInView({ threshold: 0.5 });
 
   // Define animation properties using useSpring
   const animationProps1 = useSpring({
@@ -149,6 +151,12 @@ function Projects() {
     config: { mass: 1, tension: 120, friction: 14 }
   });
 
+  const animationProps19 = useSpring({
+    opacity: inView19 ? 1 : 0,
+    transform: inView19 ? "translateY(0)" : "translateY(50px)",
+    config: { mass: 1, tension: 120, friction: 14 }
+  });
+
   return (
     <div>
       {/* <!--==================== PROJECTS ====================--> */}
@@ -159,7 +167,36 @@ function Projects() {
         <h2 className="section__title">Recent Projects</h2>
         <div className="projects__container container grid">
 
-            {/* New project added at top: BitStarkNet (Resolve Hackathon) */}
+            {/* New project added at top: AI Tech Navigator */}
+            <animated.article
+              ref={ref19}
+              style={animationProps19}
+              className="projects__card"
+            >
+              <img src={aiTechImage} alt="AI Tech Navigator" className="projects__img" />
+              <div className="projects__modal">
+                <span className="projects__subtitle">AI / Tools</span>
+                <h2 className="projects__title">AI Tech Navigator</h2>
+                <a
+                  href="https://ai-tech-navigator.vercel.app/"
+                  className="projects__button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live App <i className="ri-external-link-line" />
+                </a>
+                <a
+                  href="https://github.com/ayomideadeniran/AI-Tech-Navigator.git"
+                  className="projects__button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repo <i className="ri-external-link-line" />
+                </a>
+              </div>
+            </animated.article>
+
+            {/* BitStarkNet (Resolve Hackathon) */}
             <animated.article
               ref={ref18}
               style={animationProps18}
@@ -412,7 +449,7 @@ function Projects() {
               </div>
             </animated.article>
 
-            <animated.article
+            {/* <animated.article
               ref={ref8}
               style={animationProps8}
               className="projects__card"
@@ -434,7 +471,7 @@ function Projects() {
                 rel="noopener noreferrer"
                 className="projects__button"> <i className="ri-external-link-line" />GITHUB Link</a>
               </div>
-            </animated.article>
+            </animated.article> */}
 
             <animated.article
               ref={ref9}
@@ -460,7 +497,7 @@ function Projects() {
               </div>
             </animated.article>
 
-            <animated.article
+            {/* <animated.article
               ref={ref12}
               style={animationProps12}
               className="projects__card"
@@ -479,7 +516,7 @@ function Projects() {
                 </a>
                 <a href="https://github.com/ayomideadeniran/Quiz-App" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
               </div>
-            </animated.article>
+            </animated.article> */}
 
             {/* Micropay: micropayment platform on StarkNet */}
             <animated.article
@@ -502,7 +539,7 @@ function Projects() {
               </div>
             </animated.article>
 
-            <animated.article
+            {/* <animated.article
               ref={ref15}
               style={animationProps15}
               className="projects__card"
@@ -514,7 +551,7 @@ function Projects() {
                 <a href="#" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Live App</a>
                 <a href="#" className="projects__button" target="_blank" rel="noopener noreferrer"> <i className="ri-external-link-line" />Github Repo</a>
               </div>
-            </animated.article>
+            </animated.article> */}
 
           </div>
       </section>
