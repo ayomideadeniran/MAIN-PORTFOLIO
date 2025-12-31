@@ -36,7 +36,7 @@ function About() {
             <br />
             <a
               target="_blank"
-              href="https://www.canva.com/design/DAG3i1_cors/YpNWi9GLkGnEEtQpYYBxlg/view?utm_content=DAG3i1_cors&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hc010ea2019"
+              href="https://www.canva.com/design/DAG7ydnqfEU/99TJ1YYajC_7RfL3bA73pg/view?utm_content=DAG7ydnqfEU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6cfdabf1bf"
               className="button"
               style={{ marginTop: "10px" }}
             >
