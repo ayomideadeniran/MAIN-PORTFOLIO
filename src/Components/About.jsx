@@ -19,7 +19,7 @@ function About() {
               full-stack applications and exploring emerging technologies. My
               work spans across Web3, Bitcoin, Rust, and modern JavaScript
               frameworks like React, Next.js, and Node.js, where I focus on
-              creating polished, production-ready solutions. Over the years,
+              creating polished, production-ready solutions. I currently work for a startup company, where I thrive in a fast-paced environment and contribute to building innovative products. Over the years,
               I’ve built diverse projects including learning management systems,
               Bitcoin offline transaction simulators, and AI-powered platforms
               for education, while also experimenting with graphic design to

@@ -202,6 +202,19 @@ svg {
   font-size: 1.25rem;
   color: var(--title-color);
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.nav__toggle:hover,
+.nav__close:hover {
+  color: var(--first-color);
+  background-color: rgba(var(--hue), 100%, 56%, 0.1);
+  transform: rotate(90deg) scale(1.1);
 }
 
 /* Nav link: bigger, padded and visibly clickable */
@@ -209,17 +222,38 @@ svg {
   color: var(--title-color);
   font-weight: var(--font-medium);
   font-size: 1.125rem; /* bigger text */
-  padding: 0.6rem 1rem; /* larger click area */
-  border-radius: 0.5rem;
+  padding: 0.65rem 1.2rem; /* larger click area */
+  border-radius: 0.6rem;
   display: inline-block;
-  transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--first-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
 .nav__link:hover,
 .nav__link:focus {
-  background-color: rgba(255,255,255,0.04);
+  background-color: rgba(255,255,255,0.08);
   color: var(--first-color);
   transform: translateY(-2px);
+}
+
+.nav__link:hover::after,
+.nav__link:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* Navigation for mobile devices */
@@ -228,15 +262,17 @@ svg {
     position: fixed;
     top: 0;
     right: -100%;
-    /* solid black background for mobile menu */
-    background-color: rgba(0,0,0,0.98);
+    /* Premium gradient background with subtle noise effect */
+    background: linear-gradient(135deg, rgba(15, 15, 25, 0.99) 0%, rgba(8, 8, 15, 0.99) 50%, rgba(12, 12, 20, 0.99) 100%);
     width: 75%;
     height: 100%;
-    /* remove large left padding so items can be centered */
-    padding: 6rem 0 0 0;
-    backdrop-filter: blur(24px);
-    -webkit-bacdrop-filter: blur(24px);
-    transition: right 0.4s;
+    padding: 6rem 0 3rem 0;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -12px 0 48px rgba(0, 0, 0, 0.6), inset 1px 0 1px rgba(255, 255, 255, 0.05);
+    overflow-y: auto;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
 .nav__list {
@@ -245,33 +281,110 @@ svg {
   row-gap: 3rem;
 }
 
-/* Mobile-specific: center sidebar items and make links full-width */
+/* Mobile-specific: premium sidebar items styling */
 @media screen and (max-width: 1023px) {
   .nav__list {
-    align-items: center; /* center horizontally */
-    row-gap: 3.5rem;
+    align-items: center;
+    row-gap: 1rem;
     width: 100%;
     padding-inline: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
   }
 
   .nav__list .nav__item {
-    width: 100%;
+    width: 80%;
+    max-width: 260px;
     display: flex;
     justify-content: center;
+    position: relative;
+  }
+
+  .nav__list .nav__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 3px;
+    height: 0%;
+    background: linear-gradient(180deg, var(--first-color), transparent);
+    border-radius: 0 2px 2px 0;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav__list .nav__item:hover::before {
+    height: 100%;
   }
 
   .nav__link {
     width: 100%;
-    text-align: center; /* center text */
-    font-size: 1.25rem; /* bigger for sidebar */
-    padding: 1rem 1.5rem; /* taller click area */
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 1.2rem 2rem;
     display: block;
     color: var(--title-color);
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.08) 0%, 
+      rgba(255, 255, 255, 0.03) 100%);
+    border: 1.5px solid rgba(var(--hue), 100%, 56%, 0.25);
+    border-radius: 12px;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.3px;
   }
 
-  /* Give the sidebar itself a subtle inner background for links when open */
-  .nav__menu {
-    background: linear-gradient(180deg, rgba(0,0,0,0.98) 0%, rgba(10,10,10,0.98) 100%);
+  .nav__link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(var(--hue), 100%, 56%, 0.4) 50%, 
+      transparent 100%);
+    transform: translateY(-50%);
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+      rgba(var(--hue), 100%, 56%, 0.1) 0%, 
+      transparent 80%);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav__link:hover,
+  .nav__link:focus {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.15) 0%, 
+      rgba(255, 255, 255, 0.08) 100%);
+    border-color: var(--first-color);
+    color: var(--first-color);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+      0 12px 32px rgba(var(--hue), 100%, 56%, 0.25),
+      0 0 20px rgba(var(--hue), 100%, 56%, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .nav__link:hover::before,
+  .nav__link:focus::before {
+    left: 100%;
+  }
+
+  .nav__link:active {
+    transform: translateY(-2px) scale(0.98);
   }
 }
 
