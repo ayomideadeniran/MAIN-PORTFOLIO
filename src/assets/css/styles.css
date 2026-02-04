@@ -141,7 +141,8 @@ svg {
 }
 
 .section {
-  padding-block: 5rem 2rem;
+  padding-block: 7rem 2rem;
+  /* Increased top padding to account for fixed header */
 }
 
 .section__title,
@@ -207,6 +208,14 @@ svg {
   color: var(--first-color);
 }
 
+/* Ensure nav items are spaced out on desktop */
+.nav__list {
+  display: flex;
+  column-gap: 3rem;
+  /* Increase gap between items */
+}
+
+/* Nav logo spacing */
 .nav__logo {
   color: var(--title-color);
   font-weight: var(--font-medium);
@@ -495,9 +504,17 @@ svg {
 }
 
 .home__blob {
-  width: 320px;
+  width: 260px;
+  /* Reduced specific size for mobile default */
   fill: var(--first-color);
   filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, 0.2));
+}
+
+@media screen and (min-width: 768px) {
+  .home__blob {
+    width: 320px;
+    /* Restore size for tablet/desktop */
+  }
 }
 
 
@@ -582,7 +599,8 @@ svg {
 
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  /* Increased min-width to prevent text clipping */
   gap: 1.5rem;
 }
 
