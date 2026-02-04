@@ -3,7 +3,7 @@
 // import viteLogo from "/vite.svg";
 // import "./App.css";
 import "./assets/css/styles.css";
-import "./assets/css/Home.css";
+
 import Home from "./Components/Home";
 import Header from "./Components/Header";
 import About from "./Components/About";
@@ -12,7 +12,7 @@ import Services from "./Components/Services";
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
-import Test from "./Components/Test";
+
 import "./assets/js/scrollreveal.min.js";
 
 function App() {

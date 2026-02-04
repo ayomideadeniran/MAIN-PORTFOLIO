@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,7 +45,7 @@ function Header() {
   return (
     <>
       {/* <!--==================== HEADER ====================--> */}
-  <header className={`header ${menuOpen ? 'menu-open' : ''}`} id="header">
+      <header className={`header ${menuOpen ? 'menu-open' : ''}`} id="header">
         {/* <!-- <div>
           <h1>I'M <span className="auto-type"></span></h1>
         </div> --> */}

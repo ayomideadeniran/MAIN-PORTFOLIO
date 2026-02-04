@@ -1,5 +1,6 @@
-import React from "react";
+
 import Image from "../assets/img/PRO-PROFILE 001.png";
+import ScrollReveal from "./ScrollReveal";
 
 function About() {
   return (
@@ -7,13 +8,13 @@ function About() {
       {/* <!--==================== ABOUT ====================--> */}
       <section className="about section" id="about">
         <div className="about__container container grid">
-          <div className="about__data">
+          <ScrollReveal className="about__data">
             <h3 className="section__subtitle">
               My <span>Intro</span>
             </h3>
 
             <h2 className="section__title">About Me</h2>
-            
+
             <p className="about__description" id="app">
               I’m a passionate developer with 3 years of experience building
               full-stack applications and exploring emerging technologies. My
@@ -42,16 +43,16 @@ function About() {
             >
               MY RESUME
             </a>
-          </div>
+          </ScrollReveal>
 
-          <div className="about__image">
+          <ScrollReveal delay={200} className="about__image">
             <svg
               className="about__blob"
               viewBox="0 0 550 592"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <mask id="maskBorder" mask-type="alpha">
+              <mask id="maskBorder" style={{ maskType: "alpha" }}>
                 <path
                   d="M263 48.1782C270.426 43.891 279.574 43.891 287 48.1782L501.157 
                171.822C508.583 176.109 513.157 184.032 513.157 192.606V439.894C513.157 
@@ -112,10 +113,10 @@ function About() {
                 />
               </defs>
             </svg>
-          </div>
+          </ScrollReveal>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
 

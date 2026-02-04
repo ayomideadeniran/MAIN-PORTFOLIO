@@ -1,52 +1,56 @@
-import React from 'react'
+import ScrollReveal from "./ScrollReveal";
+
 
 function Footer() {
   return (
-    <div>
-        
-    {/* <!--==================== FOOTER ====================--> */}
-    <footer class="footer">
-      <div class="footer__container container grid">
-        <div>
-          <h1 class="footer__title">Ayomide <span>Adeniran</span></h1>
+    <footer className="footer">
+      <ScrollReveal className="footer__container container grid">
+        <div className="footer__content grid">
+          <div>
+            <a href="#" className="footer__logo nav__logo">
+              Ayomide
+            </a>
+            <h3 className="footer__title">
+              Subscribe to my <span>Newsletter</span>
+            </h3>
+            <span className="footer__education">
+              Productivity, Innovation and Technology
+            </span>
+          </div>
 
-          <h2 class="footer__education">MERN Developer</h2>
+          <div className="footer__social">
+            <a
+              href="https://web.facebook.com/"
+              target="-blank"
+              className="footer__social-link"
+            >
+              <i className="ri-facebook-circle-line"></i>
+            </a>
+
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              className="footer__social-link"
+            >
+              <i className="ri-instagram-fill"></i>
+            </a>
+
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              className="footer__social-link"
+            >
+              <i className="ri-twitter-fill"></i>
+            </a>
+          </div>
         </div>
 
-        <div class="footer__social">
-          <a
-            href="https://web.facebook.com/ayomide.adeniran.562/"
-            target="-blank"
-            class="footer__social-link"
-          >
-            <i class="ri-facebook-circle-line"></i>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/ayomide-adeniran-bb3ba930b/"
-            target="_blank"
-            class="home__social-link"
-          >
-            <i class="ri-linkedin-box-line"></i>
-          </a>
-
-          <a
-            href="https://x.com/AyomideAdenira"
-            target="-blank"
-            class="footer__social-link"
-          >
-            <i class="ri-twitter-line"></i>
-          </a>
-        </div>
-
-        {/* <!-- <span class="footer--copy">
-          &#169; copyright Knights. All right reserved
-        </span> --> */}
-      </div>
+        <p className="footer__copy">
+          &#169; Ayomide Adeniran. All rights reserved
+        </p>
+      </ScrollReveal>
     </footer>
-
-    </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

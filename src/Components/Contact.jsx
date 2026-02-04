@@ -1,9 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { useSpring, animated } from 'react-spring';
-import { useInView } from 'react-intersection-observer';
+import { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollReveal from './ScrollReveal';
 
 const Form = () => {
   // State to hold form data
@@ -15,16 +14,6 @@ const Form = () => {
 
   // Reference for the form element
   const formRef = useRef();
-
-  // useInView hook to track visibility of the contact section
-  const [ref, inView] = useInView({ threshold: 0.5 });
-
-  // Define animations for contact form using useSpring
-  const formAnimationProps = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? 'translateY(0)' : 'translateY(-100px)',
-    config: { duration: 2000 },
-  });
 
   // Handle input change
   const handleChange = (e) => {
@@ -98,8 +87,8 @@ const Form = () => {
         pauseOnHover
         theme="dark"
       />
-      <section className="contact section" id="contact" ref={ref}>
-        <animated.div style={formAnimationProps} className="contact__container container grid">
+      <section className="contact section" id="contact">
+        <ScrollReveal className="contact__container container grid">
           <h3 className="section__subtitle">
             Get In <span>Touch</span>
           </h3>
@@ -141,7 +130,7 @@ const Form = () => {
               Send Message
             </button>
           </form>
-        </animated.div>
+        </ScrollReveal>
       </section>
     </div>
   );

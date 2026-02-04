@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useTrail, useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 
@@ -7,52 +7,29 @@ function Skill() {
   const [ref, inView] = useInView({ threshold: 0.2 });
 
   // Array of skills - REARRANGED FOR WEB3 FULL STACK PRIORITY
-const skills = [
-  "RUST",
-  "Python",
-  "Nodejs",
-  "TypeScript",
-  "Reactjs",
-  "Nextjs",
-  "Expressjs",
-  "MongoDB",
-  "C",
-  "Cairo",
-  "Solidity",
-  "Web3.js",
-  "Javascript",
-  "Tailwind CSS",
-  "HTML",
-  "CSS",
-  "Bootstrap",
-  "Git & Github",
-  "Photoshop",
-  "Canva",
-];
-
-
-const colors = [
-  "#FF6B6B", // RUST – strong red/orange
-  "#4ECDC4", // Python – teal / standout
-  "#FFD93D", // Nodejs – yellow / bright
-  "#1E90FF", // TypeScript – blue / techy
-  "#FF7F50", // Reactjs – coral / vibrant
-  "#8A2BE2", // Nextjs – purple
-  "#20B2AA", // Expressjs – light teal
-  "#FF69B4", // MongoDB – pinkish / standout
-  "#FF6347", // C – tomato
-  "#00CED1", // Cairo – cyan
-  "#ADFF2F", // Solidity – lime green
-  "#FF4500", // Web3.js – orange red
-  "#4682B4", // Javascript – steel blue
-  "#DA70D6", // Tailwind CSS – orchid
-  "#F0E68C", // HTML – khaki
-  "#87CEFA", // CSS – light sky blue
-  "#FFA500", // Bootstrap – orange
-  "#6A5ACD", // Git & Github – slate blue
-  "#FFB6C1", // Photoshop – light pink
-  "#20B2AA", // Canva – teal (repeat or slightly different shade)
-];
+  const skills = [
+    "RUST",
+    "Python",
+    "Nodejs",
+    "Stellar Soroban",
+    "TypeScript",
+    "Reactjs",
+    "Nextjs",
+    "Expressjs",
+    "MongoDB",
+    "C",
+    "Cairo",
+    "Solidity",
+    "Web3.js",
+    "Javascript",
+    "Tailwind CSS",
+    "HTML",
+    "CSS",
+    "Bootstrap",
+    "Git & Github",
+    "Photoshop",
+    "Canva",
+  ];
 
 
   // Define animations for each skill item using useTrail
@@ -112,10 +89,7 @@ const colors = [
               {trail.map((props, index) => (
                 <animated.div
                   key={index}
-                  style={{
-                    ...props,
-                    backgroundColor: colors[index % colors.length],
-                  }}
+                  style={props}
                   className="skills__item"
                 >
                   {skills[index]}

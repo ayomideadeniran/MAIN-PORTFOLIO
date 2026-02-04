@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import autotyper from "autotyper";
+import ScrollReveal from "./ScrollReveal";
 
 import Image from "../assets/img/PRO-PROFILE 001.png";
 
@@ -29,10 +30,10 @@ function Home() {
       {/* <main class="main"> */}
       <section className="home section" id="home">
         <div className="home__container container grid">
-          <div className="home__content">
+          <ScrollReveal className="home__content">
             <div className="home__data">
               <h3 className="home__subtitle">
-                Hello World, <span>I'm</span>
+                Hello World, <span>I&apos;m</span>
               </h3>
 
               <h1 className="home__title auto-type" ref={typewriterRef}>
@@ -48,7 +49,7 @@ function Home() {
               </p>
               <a href="#contact" className="button">
                 {" "}
-                Let's Talk{" "}
+                Let&apos;s Talk{" "}
               </a>
             </div>
 
@@ -79,15 +80,15 @@ function Home() {
                 <i className="ri-linkedin-box-line"></i>
               </a>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="home__image">
+          <ScrollReveal delay={300} className="home__image">
             <svg
               className="home__blob"
               viewBox="0 0 550 591"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <mask id="maskBlob" mask-type="alpha">
+              <mask id="maskBlob" style={{ maskType: "alpha" }}>
                 <path
                   d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
                   170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
@@ -145,10 +146,10 @@ function Home() {
                 />
               </defs>
             </svg>
-          </div>
+          </ScrollReveal>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
 
