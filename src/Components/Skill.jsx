@@ -2,33 +2,41 @@
 import { useTrail, useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 
+import {
+  SiRust, SiPython, SiNodedotjs, SiStellar, SiTypescript,
+  SiReact, SiNextdotjs, SiExpress, SiMongodb, SiC,
+  SiSolidity, SiEthereum as SiWeb3Dotjs, SiJavascript, SiTailwindcss,
+  SiHtml5, SiCss3, SiBootstrap, SiGithub, SiAdobephotoshop, SiCanva
+} from "react-icons/si";
+import { TbBrandCpp } from "react-icons/tb"; // Alternative for Cairo/C++ if needed
+
 function Skill() {
   // useInView hook to track visibility of the skill section
   const [ref, inView] = useInView({ threshold: 0.2 });
 
-  // Array of skills - REARRANGED FOR WEB3 FULL STACK PRIORITY
+  // Array of skills with Icons
   const skills = [
-    "RUST",
-    "Python",
-    "Nodejs",
-    "Stellar Soroban",
-    "TypeScript",
-    "Reactjs",
-    "Nextjs",
-    "Expressjs",
-    "MongoDB",
-    "C",
-    "Cairo",
-    "Solidity",
-    "Web3.js",
-    "Javascript",
-    "Tailwind CSS",
-    "HTML",
-    "CSS",
-    "Bootstrap",
-    "Git & Github",
-    "Photoshop",
-    "Canva",
+    { name: "RUST", icon: <SiRust /> },
+    { name: "Python", icon: <SiPython /> },
+    { name: "Nodejs", icon: <SiNodedotjs /> },
+    { name: "Stellar Soroban", icon: <SiStellar /> },
+    { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "Reactjs", icon: <SiReact /> },
+    { name: "Nextjs", icon: <SiNextdotjs /> },
+    { name: "Expressjs", icon: <SiExpress /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "C", icon: <SiC /> },
+    { name: "Cairo", icon: <TbBrandCpp /> }, // Using C++ icon as proxy for C-like/Cairo if specific missing
+    { name: "Solidity", icon: <SiSolidity /> },
+    { name: "Web3.js", icon: <SiWeb3Dotjs /> },
+    { name: "Javascript", icon: <SiJavascript /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    { name: "HTML", icon: <SiHtml5 /> },
+    { name: "CSS", icon: <SiCss3 /> },
+    { name: "Bootstrap", icon: <SiBootstrap /> },
+    { name: "Git & Github", icon: <SiGithub /> },
+    { name: "Photoshop", icon: <SiAdobephotoshop /> },
+    { name: "Canva", icon: <SiCanva /> },
   ];
 
 
@@ -92,7 +100,8 @@ function Skill() {
                   style={props}
                   className="skills__item"
                 >
-                  {skills[index]}
+                  <span className="skills__icon">{skills[index].icon}</span>
+                  <span className="skills__name">{skills[index].name}</span>
                 </animated.div>
               ))}
             </div>

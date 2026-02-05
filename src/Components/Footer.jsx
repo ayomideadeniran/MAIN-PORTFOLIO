@@ -1,54 +1,64 @@
 import ScrollReveal from "./ScrollReveal";
 
 
+import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
+
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
-      <ScrollReveal className="footer__container container grid">
+      <div className="footer__container container grid">
         <div className="footer__content grid">
-          <div>
-            <a href="#" className="footer__logo nav__logo">
+          {/* Brand Section */}
+          <div className="footer__brand">
+            <a href="#" className="footer__logo">
               Ayomide
             </a>
-            <h3 className="footer__title">
-              Subscribe to my <span>Newsletter</span>
-            </h3>
-            <span className="footer__education">
-              Productivity, Innovation and Technology
-            </span>
+            <p className="footer__description">
+              Building digital experiences that matter.<br />
+              Productivity, Innovation, Technology.
+            </p>
           </div>
 
-          <div className="footer__social">
-            <a
-              href="https://web.facebook.com/"
-              target="-blank"
-              className="footer__social-link"
-            >
-              <i className="ri-facebook-circle-line"></i>
-            </a>
+          {/* Quick Links */}
+          <div className="footer__links-wrapper">
+            <h3 className="footer__title">Quick Links</h3>
+            <ul className="footer__links">
+              <li><a href="#home" className="footer__link">Home</a></li>
+              <li><a href="#about" className="footer__link">About</a></li>
+              <li><a href="#projects" className="footer__link">Projects</a></li>
+              <li><a href="#skills" className="footer__link">Skills</a></li>
+            </ul>
+          </div>
 
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              className="footer__social-link"
-            >
-              <i className="ri-instagram-fill"></i>
-            </a>
-
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              className="footer__social-link"
-            >
-              <i className="ri-twitter-fill"></i>
-            </a>
+          {/* Socials & Contact */}
+          <div className="footer__socials-wrapper">
+            <h3 className="footer__title">Let's Connect</h3>
+            <div className="footer__social">
+              <a href="https://github.com/ayomideadeniran" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="GitHub">
+                <FiGithub />
+              </a>
+              <a href="https://linkedin.com/in/ayomideadeniran" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="LinkedIn">
+                <FiLinkedin />
+              </a>
+              <a href="https://twitter.com/ayomideadeniran" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="Twitter">
+                <FiTwitter />
+              </a>
+              <a href="mailto:ayomide@example.com" className="footer__social-link" aria-label="Email">
+                <FiMail />
+              </a>
+            </div>
           </div>
         </div>
 
-        <p className="footer__copy">
-          &#169; Ayomide Adeniran. All rights reserved
-        </p>
-      </ScrollReveal>
+        <div className="footer__bottom">
+          <p className="footer__copy">
+            &#169; {currentYear} Ayomide Adeniran. All rights reserved.
+          </p>
+          <span className="footer__note">Made with ❤️ for Web3</span>
+        </div>
+      </div>
     </footer>
   );
 }

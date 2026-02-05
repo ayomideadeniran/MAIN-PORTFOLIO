@@ -61,34 +61,46 @@ function Header() {
             ref={navMenuRef}
             aria-hidden={!menuOpen}
           >
+            {/* Logo inside Menu for Mobile */}
+            <a href="#" className="nav__logo nav__logo-sidebar">
+              <span> <strong>Ayomide</strong> </span>
+            </a>
+
             <ul className="nav__list">
               <li className="nav__item">
-                <a href="#home" className="nav__link">
+                <a href="#home" className="nav__link" onClick={handleCloseClick}>
                   Home
                 </a>
               </li>
 
               <li className="nav__item">
-                <a href="#about" className="nav__link">
+                <a href="#about" className="nav__link" onClick={handleCloseClick}>
                   About
                 </a>
               </li>
 
               <li className="nav__item">
-                <a href="#services" className="nav__link">
-                  Services
+                <a href="#skills" className="nav__link" onClick={handleCloseClick}>
+                  Skills
                 </a>
               </li>
 
               <li className="nav__item">
-                <a href="#projects" className="nav__link">
+                <a href="#projects" className="nav__link" onClick={handleCloseClick}>
                   Projects
                 </a>
               </li>
 
               <li className="nav__item">
-                <a href="#contact" className="nav__link">
-                  Contact
+                <a href="#contact" className="nav__link" onClick={handleCloseClick}>
+                  Contact Me
+                </a>
+              </li>
+
+              {/* Hire Me CTA Button */}
+              <li className="nav__item">
+                <a href="#contact" className="nav__link nav__cta-button" onClick={handleCloseClick}>
+                  Hire Me
                 </a>
               </li>
             </ul>
@@ -115,7 +127,7 @@ function Header() {
             <i className="ri-menu-line"></i>
           </div>
         </nav>
-      </header>
+      </header >
     </>
   );
 }

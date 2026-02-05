@@ -175,32 +175,53 @@ const projectsData = [
   }
 ];
 
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+
 const ProjectCard = ({ project }) => {
-  const [ref, inView] = useInView({ threshold: 0.5 });
+  const [ref, inView] = useInView({ threshold: 0.2 });
   const animationProps = useSpring({
     opacity: inView ? 1 : 0,
     transform: inView ? "translateY(0)" : "translateY(50px)",
     config: { mass: 1, tension: 120, friction: 14 }
   });
 
+  // Split subtitle strings like "React / Node / AI" into an array for badges
+  const techTags = project.subtitle.split("/").map(tag => tag.trim());
+
   return (
     <animated.article ref={ref} style={animationProps} className="projects__card">
-      <img src={project.image} alt={project.title} className="projects__img" />
-      <div className="projects__modal">
-        <span className="projects__subtitle">{project.subtitle}</span>
-        <h2 className="projects__title">{project.title}</h2>
-        {project.links.map((link, index) => (
-          <a
-            key={index}
-            href={link.url}
-            className="projects__button"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={link.text.length > 50 ? { textDecoration: "none", textAlign: "center" } : {}}
-          >
-            {link.text} <i className="ri-external-link-line" />
-          </a>
-        ))}
+      <div className="projects__image-container">
+        <img src={project.image} alt={project.title} className="projects__img" />
+        <div className="projects__overlay"></div>
+      </div>
+
+      <div className="projects__content">
+        <h3 className="projects__title">{project.title}</h3>
+
+        <div className="projects__tags">
+          {techTags.map((tag, index) => (
+            <span key={index} className="projects__tag">{tag}</span>
+          ))}
+        </div>
+
+        <div className="projects__links">
+          {project.links.map((link, index) => (
+            <a
+              key={index}
+              href={link.url}
+              className="projects__link-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.text}
+            >
+              {link.text.toLowerCase().includes("github") || link.text.toLowerCase().includes("repo") ? (
+                <><FiGithub /> Code</>
+              ) : (
+                <><FiExternalLink /> Live</>
+              )}
+            </a>
+          ))}
+        </div>
       </div>
     </animated.article>
   );
