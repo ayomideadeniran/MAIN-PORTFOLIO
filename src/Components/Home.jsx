@@ -63,7 +63,7 @@ function Home() {
               </a>
 
               <a
-                href="https://x.com/AyomideAdenira"
+                href="https://x.com/AtechAtechAtech"
                 target="_blank"
                 className="home__social-link"
               >

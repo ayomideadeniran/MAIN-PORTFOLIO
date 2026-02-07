@@ -42,7 +42,7 @@ function Footer() {
               <a href="https://linkedin.com/in/ayomideadeniran" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="LinkedIn">
                 <FiLinkedin />
               </a>
-              <a href="https://twitter.com/ayomideadeniran" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="Twitter">
+              <a href="https://x.com/AtechAtechAtech" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="Twitter">
                 <FiTwitter />
               </a>
               <a href="mailto:ayomide@example.com" className="footer__social-link" aria-label="Email">
