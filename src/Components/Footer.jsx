@@ -45,7 +45,7 @@ function Footer() {
               <a href="https://x.com/AtechAtechAtech" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="Twitter">
                 <FiTwitter />
               </a>
-              <a href="mailto:ayomide@example.com" className="footer__social-link" aria-label="Email">
+              <a href="mailto:ayomideratata@gmail.com" className="footer__social-link" aria-label="Email">
                 <FiMail />
               </a>
             </div>
