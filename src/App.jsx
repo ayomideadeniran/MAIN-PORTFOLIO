@@ -12,6 +12,7 @@ import Services from "./Components/Services";
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import ScrollUp from "./Components/ScrollUp";
 
 import "./assets/js/scrollreveal.min.js";
 
@@ -27,6 +28,7 @@ function App() {
       <Projects></Projects>
       <Contact></Contact>
       <Footer></Footer>
+      <ScrollUp></ScrollUp>
     </>
   );
 }
