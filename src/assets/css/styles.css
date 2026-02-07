@@ -435,6 +435,11 @@ svg {
   transition: .4s;
 }
 
+.scroll-hide {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
 .blur-header::after {
   content: '';
   position: absolute;
@@ -472,7 +477,7 @@ svg {
 .scrollup {
   position: fixed;
   right: 1rem;
-  bottom: -4rem;
+  bottom: -20%;
   /* Hidden by default */
   background-color: hsla(var(--hue), 24%, 15%, 0.8);
   backdrop-filter: blur(8px);
@@ -480,6 +485,7 @@ svg {
   border-radius: .5rem;
   display: inline-flex;
   z-index: var(--z-tooltip);
+  /* Ensure high z-index */
   transition: bottom .4s, transform .4s, background-color .4s;
   color: var(--first-color);
   font-size: 1.25rem;

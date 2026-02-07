@@ -7,7 +7,7 @@ const ScrollUp = () => {
     useEffect(() => {
         const toggleVisible = () => {
             const scrolled = window.scrollY;
-            if (scrolled > 350) {
+            if (scrolled > 200) {
                 setVisible(true);
             } else {
                 setVisible(false);

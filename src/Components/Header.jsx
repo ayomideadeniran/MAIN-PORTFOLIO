@@ -2,6 +2,30 @@ import { useState, useEffect, useRef } from "react";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Always show at top (e.g., < 50px)
+      if (currentScrollY < 50) {
+        setHidden(false);
+      } else if (currentScrollY > lastScrollY.current) {
+        // Scrolling Down -> Hide
+        setHidden(true);
+      } else {
+        // Scrolling Up -> Show
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleToggleClick = () => {
     setMenuOpen(prev => !prev);
@@ -45,7 +69,7 @@ function Header() {
   return (
     <>
       {/* <!--==================== HEADER ====================--> */}
-      <header className={`header ${menuOpen ? 'menu-open' : ''}`} id="header">
+      <header className={`header ${hidden ? 'scroll-hide' : ''} ${menuOpen ? 'menu-open' : ''}`} id="header">
         {/* <!-- <div>
           <h1>I'M <span className="auto-type"></span></h1>
         </div> --> */}
