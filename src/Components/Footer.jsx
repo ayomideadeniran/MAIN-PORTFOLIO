@@ -39,7 +39,7 @@ function Footer() {
               <a href="https://github.com/ayomideadeniran" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="GitHub">
                 <FiGithub />
               </a>
-              <a href="https://linkedin.com/in/ayomideadeniran" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/ayomide-adeniran-bb3ba930b/" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="LinkedIn">
                 <FiLinkedin />
               </a>
               <a href="https://x.com/AtechAtechAtech" target="_blank" rel="noreferrer" className="footer__social-link" aria-label="Twitter">
