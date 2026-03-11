@@ -1473,3 +1473,15 @@ svg {
   color: red;
   font-size: 4rem;
 }
+
+.projects__button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.projects__toggle-btn .btn__content {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}

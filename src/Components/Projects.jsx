@@ -185,7 +185,8 @@ const projectsData = [
   }
 ];
 
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { useState } from "react";
 
 const ProjectCard = ({ project }) => {
   const [ref, inView] = useInView({ threshold: 0.2 });
@@ -238,6 +239,9 @@ const ProjectCard = ({ project }) => {
 };
 
 function Projects() {
+  const [expanded, setExpanded] = useState(false);
+  const visibleProjects = expanded ? projectsData : projectsData.slice(0, 5);
+
   return (
     <div>
       {/* <!--==================== PROJECTS ====================--> */}
@@ -247,10 +251,25 @@ function Projects() {
         </h3>
         <h2 className="section__title">Recent Projects</h2>
         <div className="projects__container container grid">
-          {projectsData.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
         </div>
+
+        {projectsData.length > 5 && (
+          <div className="projects__button-container">
+            <button
+              className="button projects__toggle-btn"
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? (
+                <span className="btn__content">Show Less <FiChevronUp /></span>
+              ) : (
+                <span className="btn__content">View More Projects <FiChevronDown /></span>
+              )}
+            </button>
+          </div>
+        )}
       </section>
     </div>
   );
