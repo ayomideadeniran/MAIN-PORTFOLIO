@@ -19,8 +19,18 @@ import scrreenImage from "../assets/img/scrreen.png";
 import tradingDashboardImage from "../assets/img/trading_dashboard.png";
 import shieldedAmmImage from "../assets/img/shielded_amm.png";
 import anchorSecurityImage from "../assets/img/anchor_security.png";
+import pifpLogo from "../assets/img/pifp.png";
 
 const projectsData = [
+  {
+    image: pifpLogo,
+    subtitle: "Starknet / Web3 / Funding",
+    title: "Proof-of-Impact Funding Protocol (PIFP)",
+    links: [
+      { url: "https://proof-of-impact-funding-protocol-pi.vercel.app/", text: "Live App" },
+      { url: "https://github.com/ayomideadeniran/Proof-of-Impact-Funding-Protocol-PIFP-", text: "GitHub Repo" }
+    ]
+  },
   {
     image: shieldedAmmImage,
     subtitle: "Starknet / ZK-Rollup",
